@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { AboutDoctor } from './components/AboutDoctor';
 import { AyushShowcase } from './components/AyushShowcase';
 import { BookingSection } from './components/BookingSection';
 import { BookingConfirmationModal } from './components/BookingConfirmationModal';
 import { AdminPortal } from './components/AdminPortal';
-import { LiveQueueTracker } from './components/LiveQueueTracker';
 import { Footer } from './components/Footer';
 import type { AyushBranchKey, Booking, ConsultationTrack } from './types/clinic';
 import { isAdminLoggedIn } from './utils/storage';
-import { Phone, Calendar, ShieldCheck } from 'lucide-react';
+import { Phone, Calendar, ShieldCheck, Clock } from 'lucide-react';
 import { CLINIC_INFO } from './data/clinicData';
 
 export function App() {
@@ -31,8 +31,15 @@ export function App() {
     }
   };
 
-  const scrollToAyush = () => {
-    const el = document.getElementById('ayush-branches');
+  const scrollToSchedule = () => {
+    const el = document.getElementById('ayush-schedule');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToAbout = () => {
+    const el = document.getElementById('about-doctor');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -49,25 +56,35 @@ export function App() {
     scrollToBooking();
   };
 
+  const handleBookAyushFromDoctor = () => {
+    setSelectedTrack('ayush');
+    scrollToBooking();
+  };
+
   return (
-    <div className="min-h-screen flex flex-col bg-stone-50 text-stone-900 selection:bg-emerald-200 selection:text-emerald-900 pb-16 sm:pb-0">
-      {/* Navigation Header */}
+    <div className="min-h-screen flex flex-col bg-stone-50 text-stone-900 selection:bg-amber-200 selection:text-amber-900 pb-16 sm:pb-0">
+      {/* Navigation Header with Tiranga styling */}
       <Header
         onOpenAdmin={() => setIsAdminPortalOpen(true)}
         onScrollToBooking={scrollToBooking}
+        onScrollToSchedule={scrollToSchedule}
+        onScrollToAbout={scrollToAbout}
         isAdmin={isAdmin}
       />
 
-      {/* Hero Overview */}
+      {/* Hero with High-Emphasis Hours & Weekly AYUSH Schedule Showcase */}
       <Hero
         onScrollToBooking={scrollToBooking}
-        onScrollToAyush={scrollToAyush}
+        onScrollToSchedule={scrollToSchedule}
       />
 
-      {/* Live Queue Waiting Room Tracker */}
-      <LiveQueueTracker />
+      {/* NEW: About Chief Physician Dr. Satyajith Shenoy & Leadership */}
+      <AboutDoctor
+        onBookAyush={handleBookAyushFromDoctor}
+        onBookCounselling={handleSelectCounselling}
+      />
 
-      {/* Primary Highlight: 30-Min OPD Booking Section */}
+      {/* Primary Highlight: 30-Min OPD Slot Booking Section */}
       <BookingSection
         selectedTrack={selectedTrack}
         setSelectedTrack={setSelectedTrack}
@@ -79,13 +96,13 @@ export function App() {
         }}
       />
 
-      {/* Educational & Attracting AYUSH Branches Showcase */}
+      {/* Deep-Dive AYUSH Weekly Disciplines & Counselling Showcase */}
       <AyushShowcase
         onSelectBranchForBooking={handleSelectBranchForBooking}
         onSelectCounselling={handleSelectCounselling}
       />
 
-      {/* Footer */}
+      {/* Comprehensive Footer with Detailed Timings & Schedule */}
       <Footer />
 
       {/* Booking Confirmation Pass Modal */}
@@ -94,7 +111,7 @@ export function App() {
         onClose={() => setConfirmedBooking(null)}
       />
 
-      {/* Secure Admin & Reception Portal */}
+      {/* Secure Admin & Reception Desk Portal */}
       <AdminPortal
         isOpen={isAdminPortalOpen}
         onClose={() => setIsAdminPortalOpen(false)}
@@ -103,27 +120,35 @@ export function App() {
         onDataChanged={handleDataChanged}
       />
 
-      {/* Mobile Sticky Bottom Bar (Primary focus: Mobile browser priority) */}
+      {/* Mobile Sticky Bottom Bar (Saffron / Gold + White + Green) */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200 px-3 py-2 flex items-center justify-between gap-2 shadow-lg">
         <a
           href={`tel:${CLINIC_INFO.phone}`}
-          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs border border-stone-200 transition-colors"
+          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-950 font-bold text-xs border border-amber-300 transition-colors"
         >
-          <Phone className="w-4 h-4 text-emerald-700" />
+          <Phone className="w-3.5 h-3.5 text-amber-700" />
           <span>Call OPD</span>
         </a>
 
         <button
-          onClick={scrollToBooking}
-          className="flex-2 flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs shadow-md transition-all cursor-pointer"
+          onClick={scrollToSchedule}
+          className="flex-1 flex items-center justify-center gap-1 py-2.5 px-2 rounded-xl bg-stone-100 text-stone-700 font-bold text-xs border border-stone-200"
         >
-          <Calendar className="w-4 h-4" />
-          <span>Book 30-Min Slot</span>
+          <Clock className="w-3.5 h-3.5 text-amber-600" />
+          <span>Schedule</span>
+        </button>
+
+        <button
+          onClick={scrollToBooking}
+          className="flex-2 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-700 to-emerald-800 active:from-emerald-800 active:to-emerald-900 text-white font-black text-xs shadow-md transition-all cursor-pointer ring-1 ring-emerald-600"
+        >
+          <Calendar className="w-4 h-4 text-emerald-200" />
+          <span>Book Slot</span>
         </button>
 
         <button
           onClick={() => setIsAdminPortalOpen(true)}
-          className="w-10 h-10 flex items-center justify-center rounded-xl bg-stone-100 border border-stone-200 text-stone-700"
+          className="w-10 h-10 flex items-center justify-center rounded-xl bg-stone-100 border border-stone-200 text-stone-700 shrink-0"
           title="Staff Portal"
         >
           <ShieldCheck className="w-4 h-4" />

@@ -34,8 +34,11 @@ export const BookingConfirmationModal: React.FC<BookingConfirmationModalProps> =
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
       <div className="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-stone-100 animate-in fade-in zoom-in-95 duration-200">
+        {/* Tiranga Ribbon */}
+        <div className="tiranga-stripe w-full" />
+
         {/* Header Ribbon */}
-        <div className="bg-gradient-to-r from-emerald-800 to-teal-800 text-white p-5 text-center relative">
+        <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-emerald-700 text-white p-5 text-center relative">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
@@ -47,11 +50,11 @@ export const BookingConfirmationModal: React.FC<BookingConfirmationModalProps> =
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-200">
+          <span className="text-xs font-black uppercase tracking-wider text-amber-200">
             Booking Confirmed
           </span>
-          <h3 className="text-xl font-bold mt-0.5">{CLINIC_INFO.name}</h3>
-          <p className="text-xs text-emerald-100/90 mt-1">Digital OPD Consultation Pass</p>
+          <h3 className="text-xl font-black mt-0.5">{CLINIC_INFO.name}</h3>
+          <p className="text-xs text-amber-100/90 mt-1 font-semibold">Official Digital OPD Consultation Pass</p>
         </div>
 
         {/* Token Card Body */}

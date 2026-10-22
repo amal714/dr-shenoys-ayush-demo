@@ -153,6 +153,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto">
       <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-stone-200 overflow-hidden my-auto">
+        <div className="tiranga-stripe w-full shrink-0" />
         {/* Header */}
         <div className="bg-stone-900 text-white px-5 py-4 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2.5">

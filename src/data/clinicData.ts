@@ -1,4 +1,4 @@
-import type { AyushBranch, ClinicConfig, TimeSlot } from '../types/clinic';
+import type { AyushBranch, ClinicConfig, TimeSlot, DoctorProfile } from '../types/clinic';
 
 export const CLINIC_INFO: ClinicConfig = {
   name: "Dr Satyajith Shenoys Ayush OPD Clinic",
@@ -128,3 +128,42 @@ export const CLINIC_BENEFITS = [
     icon: '📍'
   }
 ];
+
+export const DOCTOR_PROFILES: { chiefPhysician: DoctorProfile; counsellor: DoctorProfile } = {
+  chiefPhysician: {
+    name: "Dr. Satyajith Shenoy",
+    role: "Chief AYUSH Physician & Medical Director",
+    qualification: "BAMS, MD (Ayush)",
+    experienceYears: "15+ Years",
+    registrationNumber: "TC Medical Council Reg. No. 14289",
+    bio: "Dr. Satyajith Shenoy is an acclaimed integrative medicine practitioner dedicated to classical healing systems in North Malabar. With extensive training across classical Ayurveda, Panchakarma rejuvenation, and bio-energetic resonance (Heiki), Dr. Shenoy combines authentic Vedic diagnostic rigor (Nadi Pariksha) with modern lifestyle medicine to address chronic disorders from their fundamental root cause.",
+    quote: "True healing is never merely suppressing pain; it is restoring the constitutional harmony of body, mind, and vital prana so the body heals itself naturally.",
+    specialties: [
+      "Classical Nadi Pariksha (Pulse Diagnosis)",
+      "Chronic Musculoskeletal & Spine Rehabilitation",
+      "Digestive, Metabolic & Gut Health Rebalancing",
+      "Bio-Energetic Heiki Resonance Therapeutics",
+      "Panchakarma Detoxification & Longevity Protocols"
+    ],
+    avatarIcon: "👨‍⚕️",
+    badge: "Senior AYUSH Specialist"
+  },
+  counsellor: {
+    name: "Dr. Ananya Varma",
+    role: "Lead Clinical Psychologist & Counsellor",
+    qualification: "M.Sc, M.Phil (Clinical Psychology)",
+    experienceYears: "10+ Years",
+    registrationNumber: "RCI Verified Professional",
+    bio: "Dr. Ananya Varma leads the parallel psychological counselling chamber at the clinic. Focusing on cognitive-behavioral therapy, mindfulness-based stress reduction, and emotional resilience, she provides empathetic, non-judgmental guidance for individuals navigating anxiety, work burnout, grief, and sleep disturbances.",
+    quote: "Mental clarity and emotional equilibrium are the foundational pillars of physical vitality.",
+    specialties: [
+      "Cognitive Behavioral Therapy (CBT)",
+      "Mindfulness & Stress Management",
+      "Sleep Architecture & Insomnia Care",
+      "Adolescent & Family Counselling"
+    ],
+    avatarIcon: "👩‍⚕️",
+    badge: "Clinical Psychology Lead"
+  }
+};
+

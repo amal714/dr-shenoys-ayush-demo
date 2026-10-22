@@ -59,3 +59,16 @@ export interface ClinicConfig {
   lunchStart: string;
   lunchEnd: string;
 }
+
+export interface DoctorProfile {
+  name: string;
+  role: string;
+  qualification: string;
+  experienceYears: string;
+  registrationNumber: string;
+  bio: string;
+  quote: string;
+  specialties: string[];
+  avatarIcon: string;
+  badge: string;
+}
