@@ -67,13 +67,13 @@ export const AYUSH_BRANCHES: AyushBranch[] = [
     badgeColor: 'bg-purple-100 text-purple-800 border-purple-300'
   },
   {
-    id: 'heiki',
-    name: 'Heiki',
+    id: 'reiki',
+    name: 'Reiki',
     dayOfWeek: 5, // Friday
     dayName: 'Friday',
-    shortDesc: 'Bio-Energetic & Gentle Resonance Therapeutics',
-    fullDesc: 'Subtle bio-energy harmonization and individualized micro-potent remedies designed to stimulate self-recovery without harsh side effects.',
-    focusAreas: ['Pediatric Recurrent Cough/Cold', 'Allergic Rhinitis', 'Psychosomatic Discomfort', 'Hormonal Imbalance'],
+    shortDesc: 'Universal Life-Force Energy & Chakra Harmonization',
+    fullDesc: 'Channeling universal life energy (Ki/Prana) through gentle, non-invasive hand placements to cleanse subtle energy channels (nadis), balance the chakras, dissolve psychosomatic blockages, and activate the body’s innate self-healing capabilities.',
+    focusAreas: ['Chronic Stress, Burnout & Anxiety', 'Chakra & Pranic Energy Balancing', 'Psychosomatic Discomfort & Tension', 'Sleep Disorders & Insomnia Relief'],
     icon: '✨',
     accentColor: '#C026D3',
     badgeColor: 'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-300'
@@ -136,13 +136,13 @@ export const DOCTOR_PROFILES: { chiefPhysician: DoctorProfile; counsellor: Docto
     qualification: "BAMS, MD (Ayush)",
     experienceYears: "15+ Years",
     registrationNumber: "TC Medical Council Reg. No. 14289",
-    bio: "Dr. Satyajith Shenoy is an acclaimed integrative medicine practitioner dedicated to classical healing systems in North Malabar. With extensive training across classical Ayurveda, Panchakarma rejuvenation, and bio-energetic resonance (Heiki), Dr. Shenoy combines authentic Vedic diagnostic rigor (Nadi Pariksha) with modern lifestyle medicine to address chronic disorders from their fundamental root cause.",
+    bio: "Dr. Satyajith Shenoy is an acclaimed integrative medicine practitioner dedicated to classical healing systems in North Malabar. With extensive training across classical Ayurveda, Panchakarma rejuvenation, and universal Reiki energy healing, Dr. Shenoy combines authentic Vedic diagnostic rigor (Nadi Pariksha) with biofield harmonization to address chronic disorders from their fundamental root cause.",
     quote: "True healing is never merely suppressing pain; it is restoring the constitutional harmony of body, mind, and vital prana so the body heals itself naturally.",
     specialties: [
       "Classical Nadi Pariksha (Pulse Diagnosis)",
       "Chronic Musculoskeletal & Spine Rehabilitation",
       "Digestive, Metabolic & Gut Health Rebalancing",
-      "Bio-Energetic Heiki Resonance Therapeutics",
+      "Reiki Energy Healing & Chakra Harmonization",
       "Panchakarma Detoxification & Longevity Protocols"
     ],
     avatarIcon: "👨‍⚕️",

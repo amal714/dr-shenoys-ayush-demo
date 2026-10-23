@@ -69,7 +69,7 @@ export const BookingSection = ({
       else if (dayOfWeek === 2) branchInfo = 'Yoga';
       else if (dayOfWeek === 3) branchInfo = 'Unani';
       else if (dayOfWeek === 4) branchInfo = 'Siddha';
-      else if (dayOfWeek === 5) branchInfo = 'Heiki';
+      else if (dayOfWeek === 5) branchInfo = 'Reiki';
 
       list.push({
         dateStr,
@@ -259,7 +259,7 @@ export const BookingSection = ({
                   </span>
                 </div>
                 <p className="text-xs text-stone-600 mt-1 font-medium">
-                  Daily rotating branch: Mon: Ayurveda · Tue: Yoga · Wed: Unani · Thu: Siddha · <strong className="text-orange-700 font-bold">Fri: Heiki</strong>
+                  Daily rotating branch: Mon: Ayurveda · Tue: Yoga · Wed: Unani · Thu: Siddha · <strong className="text-orange-700 font-bold">Fri: Reiki</strong>
                 </p>
               </div>
             </button>
@@ -322,7 +322,7 @@ export const BookingSection = ({
                 );
               }
 
-              const isHeikiDay = item.branchInfo === 'Heiki';
+              const isReikiDay = item.branchInfo === 'Reiki';
 
               return (
                 <button
@@ -335,7 +335,7 @@ export const BookingSection = ({
                   className={`shrink-0 w-24 py-3 px-1.5 rounded-2xl border-2 text-center transition-all cursor-pointer ${
                     isSelected
                       ? 'bg-gradient-to-b from-amber-500 to-orange-600 text-white border-orange-600 shadow-md scale-102 ring-2 ring-orange-300'
-                      : isHeikiDay
+                      : isReikiDay
                       ? 'bg-orange-50/70 border-orange-300 text-stone-900 hover:border-orange-500'
                       : 'bg-white hover:bg-stone-50 border-stone-200 text-stone-800'
                   }`}
@@ -350,7 +350,7 @@ export const BookingSection = ({
                     className={`block text-[10px] font-extrabold truncate px-1 rounded-md ${
                       isSelected
                         ? 'bg-black/20 text-white'
-                        : isHeikiDay
+                        : isReikiDay
                         ? 'bg-orange-200 text-orange-950 font-black'
                         : 'bg-stone-100 text-stone-700'
                     }`}
@@ -365,7 +365,7 @@ export const BookingSection = ({
           {/* Dynamic Banner highlighting today's AYUSH Focus */}
           {selectedTrack === 'ayush' && currentAyushBranch && (
             <div className={`mt-3.5 p-3.5 rounded-2xl border flex items-center justify-between text-xs ${
-              currentAyushBranch.id === 'heiki'
+              currentAyushBranch.id === 'reiki'
                 ? 'bg-orange-50 border-orange-300 text-orange-950'
                 : 'bg-emerald-50 border-emerald-300 text-emerald-950'
             }`}>

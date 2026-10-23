@@ -107,7 +107,7 @@ export const Footer = () => {
             </div>
             <div className="flex justify-between py-1 border-b border-stone-700/60 bg-orange-950/40 p-1 rounded border border-orange-900/60">
               <span className="text-amber-200 font-bold">Friday</span>
-              <span className="text-orange-400 font-black">✨ Heiki Resonance Clinic</span>
+              <span className="text-orange-400 font-black">✨ Reiki Resonance Clinic</span>
             </div>
             <div className="flex justify-between py-1 border-b border-stone-700/60">
               <span className="text-stone-300">Mon – Sat (Daily)</span>

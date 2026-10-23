@@ -12,7 +12,7 @@ export const AyushShowcase = ({
   onSelectBranchForBooking,
   onSelectCounselling
 }: AyushShowcaseProps) => {
-  const [activeBranch, setActiveBranch] = useState<AyushBranchKey>('heiki');
+  const [activeBranch, setActiveBranch] = useState<AyushBranchKey>('reiki');
 
   return (
     <section id="ayush-schedule" className="py-14 px-4 bg-gradient-to-b from-stone-50 via-white to-stone-100 border-t border-stone-200">
@@ -36,7 +36,7 @@ export const AyushShowcase = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3.5">
           {AYUSH_BRANCHES.map((b) => {
             const isSelected = activeBranch === b.id;
-            const isHeiki = b.id === 'heiki';
+            const isReiki = b.id === 'reiki';
 
             return (
               <div
@@ -44,13 +44,13 @@ export const AyushShowcase = ({
                 onClick={() => setActiveBranch(b.id)}
                 className={`p-4 rounded-3xl border-2 transition-all cursor-pointer flex flex-col justify-between relative overflow-hidden ${
                   isSelected
-                    ? isHeiki
+                    ? isReiki
                       ? 'bg-gradient-to-b from-orange-50/90 to-white border-orange-500 shadow-md ring-2 ring-orange-400/30'
                       : 'bg-white border-emerald-700 shadow-md ring-2 ring-emerald-500/20'
                     : 'bg-white/80 border-stone-200 hover:border-amber-400 hover:shadow-xs'
                 }`}
               >
-                {isHeiki && (
+                {isReiki && (
                   <div className="absolute top-0 right-0 bg-gradient-to-l from-orange-600 to-amber-600 text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-bl-lg">
                     Specialist Day
                   </div>
@@ -86,11 +86,11 @@ export const AyushShowcase = ({
         {/* Selected Branch In-Depth Details Box */}
         {(() => {
           const current = AYUSH_BRANCHES.find((b) => b.id === activeBranch) || AYUSH_BRANCHES[4];
-          const isHeiki = current.id === 'heiki';
+          const isReiki = current.id === 'reiki';
 
           return (
             <div className={`mt-6 rounded-3xl border-2 p-5 sm:p-7 shadow-md transition-all ${
-              isHeiki
+              isReiki
                 ? 'bg-gradient-to-br from-amber-50/50 via-white to-orange-50/40 border-orange-300'
                 : 'bg-white border-emerald-200/80'
             }`}>
@@ -131,12 +131,12 @@ export const AyushShowcase = ({
                     {current.fullDesc}
                   </p>
 
-                  {isHeiki && (
+                  {isReiki && (
                     <div className="mt-4 p-4 bg-orange-100/70 border-2 border-orange-300 rounded-2xl text-xs text-orange-950 font-medium">
                       <div className="font-black text-orange-900 text-sm mb-1 flex items-center gap-1.5">
-                        <span>✨ Friday Dedicated Heiki Care:</span>
+                        <span>✨ Friday Dedicated Reiki Energy Care:</span>
                       </div>
-                      Heiki works through bio-resonance and energetic re-harmonization without invasive interventions. Specially recommended for pediatric care, recurring respiratory allergies, psychosomatic tension, and lifestyle fatigue.
+                      Reiki channels universal vital energy (Ki/Prana) through gentle touch and biofield focus to release trapped emotional stress, align the subtle chakras, and restore autonomic nervous system balance. Highly recommended for chronic fatigue, psychosomatic tension, emotional anxiety, and holistic recovery support.
                     </div>
                   )}
                 </div>

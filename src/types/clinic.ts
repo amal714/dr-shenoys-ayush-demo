@@ -1,4 +1,4 @@
-export type AyushBranchKey = 'ayurveda' | 'yoga' | 'unani' | 'siddha' | 'heiki';
+export type AyushBranchKey = 'ayurveda' | 'yoga' | 'unani' | 'siddha' | 'reiki';
 
 export interface AyushBranch {
   id: AyushBranchKey;

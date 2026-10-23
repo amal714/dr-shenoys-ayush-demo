@@ -20,7 +20,7 @@ Official mobile-first web reservation platform for **Dr Satyajith Shenoys Ayush 
 * **Tuesday:** Yoga & Naturopathy (Breath alignment & drugless therapies)
 * **Wednesday:** Unani (Humoral equilibrium & regimenal care)
 * **Thursday:** Siddha (Kayakalpa, longevity & Varmam therapies)
-* **Friday:** **Heiki** (Bio-energetic resonance & subtle vibrational therapeutics — strictly replacing Homeo per clinic standards)
+* **Friday:** **Reiki** (Universal life-force energy, chakra alignment & biofield healing — strictly replacing Homeo per clinic standards)
 * **Saturday:** General AYUSH Review & Follow-up Clinic
 
 ### 2. Parallel Psychological Counselling Track (Mon–Sat)

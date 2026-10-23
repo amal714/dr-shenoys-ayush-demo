@@ -180,14 +180,14 @@ export const Hero = ({ onScrollToBooking, onScrollToSchedule }: HeroProps) => {
                   <div className="text-[10px] text-stone-500">Kayakalpa & Varmam Healing</div>
                 </div>
 
-                {/* Friday: Heiki (Special highlight) */}
+                {/* Friday: Reiki (Special highlight) */}
                 <div className="p-3 rounded-2xl bg-gradient-to-br from-fuchsia-50 via-orange-50 to-amber-50 border-2 border-orange-400 shadow-xs ring-1 ring-orange-300">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-extrabold text-orange-950">Friday</span>
                     <span className="text-base">✨</span>
                   </div>
-                  <div className="text-xs font-black text-orange-700 mt-1">Heiki Clinic</div>
-                  <div className="text-[10px] text-orange-900 font-semibold">Bio-Energy Resonance</div>
+                  <div className="text-xs font-black text-orange-700 mt-1">Reiki Clinic</div>
+                  <div className="text-[10px] text-orange-900 font-semibold">Universal Energy & Chakra Care</div>
                 </div>
 
                 {/* Saturday: Review OPD */}
